@@ -29,15 +29,17 @@ int main()
  
     //reopen file to reset marker to start
     fin.close();
-    ifstream _fin(filename);
+    fin.open(filename);
 
     //read elements from file and instantiate objects on proc_list
     for (int i = 0; i < count; i++)
     {
-        _fin >> _id >> _lines;
+        fin >> _id >> _lines;
         proc_list[i] = new Process(_id, _lines);
     }
- 
+    //close file
+    fin.close();
+    
     //print static members
     Process::display();
 
@@ -48,6 +50,7 @@ int main()
     for(int i=0; i<count;i++){
 	delete proc_list[i];
     }
+    
     cout << endl;
     return 0;
 }
