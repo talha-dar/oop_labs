@@ -23,14 +23,12 @@ int main(){
 
     //iterate filr marker
     while(!fin.eof()){
-	count++;
 	fin.ignore('\n');
+	count++;
     }
-    count++;
-
+    cout<<"\nCount of file: "<<count;
     //create dynamic memory
     proc_list=new Process[count];
-
     //reopen file to reset marker to start
     fin.close();
     ifstream _fin(filename);
@@ -42,10 +40,16 @@ int main(){
     }
 
     //print non-static members
-    proc_list[0].display();
+    Process::display();
 
     //print array
     print(proc_list, count);
+    
+    //delete dynamic mem
+    // for(int i=0; i<count;i++){
+    // 	delete proc_list[i];
+    // }
+
     cout<<endl;
     return 0;
 }
