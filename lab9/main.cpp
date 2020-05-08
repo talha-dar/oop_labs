@@ -38,9 +38,16 @@ int main()
         proc_list[i] = new Process(_id, _lines);
     }
  
-    //print non-static members
+    //print static members
     Process::display();
-    
+
+    //print non static members
+    print(proc_list, count);
+
+    //delete memory
+    for(int i=0; i<count;i++){
+	delete proc_list[i];
+    }
     cout << endl;
     return 0;
 }

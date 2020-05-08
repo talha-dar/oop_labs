@@ -122,12 +122,13 @@ void Process::display()
     cout << "\n\tAverage Lines per process: " << avgLinesPerProcess;
 }
 
-void print(const Process *_procs, const int size)
+void print(Process** _procs, const int size)
 {
+    cout<<endl;
     for (int i = 0; i < size; i++)
     {
-        cout << "\n\tProcess ID: " << _procs[i].get_id();
-        cout << "\n\tLines: " << _procs[i].get_lines();
+        cout << "\n\tProcess ID: " << _procs[i]->get_id();
+        cout << "\n\tLines: " << _procs[i]->get_lines();
         cout << endl;
     }
 }

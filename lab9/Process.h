@@ -41,4 +41,4 @@ int Process::maxLinesOfCode = 0;
 int Process::minLinesOfCode = 0;
 int Process::avgLinesPerProcess = 0;
 
-void print(const Process *, const int);
+void print(Process**, const int);
