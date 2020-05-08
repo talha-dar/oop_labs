@@ -1,55 +1,46 @@
-#include<iostream>
-#include<cstring>
-#include<fstream>
-#include"Process.h"
-#include"Process.cpp"
+#include <iostream>
+#include <fstream>
+#include "Process.h"
+#include "Process.cpp"
 using namespace std;
+ 
+int main()
+{
+    char filename[] = {"processes.txt"};
+    int count = 0, _id = 0, _lines = 0;
 
-// int get_fileHeight(const char fname[]){
-    
-//}
-
-int main(){
-    char filename[]={"processes.txt"};
-    int count=0, _id=0, _lines=0;
-    Process* proc_list=nullptr;
-    
     //open file, and iterate through it to find number of lines.
     ifstream fin(filename);
-    if(!fin.is_open()){
-	cout<<"\nFile not found.";
-	return 0;
+    if (!fin.is_open())
+    {
+        cout << "\nFile not found.";
+        return 0;
     }
 
     //iterate filr marker
-    while(!fin.eof()){
-	fin.ignore('\n');
-	count++;
+    while (!fin.eof())
+    {
+        fin.ignore('\n');
+        count++;
     }
-    cout<<"\nCount of file: "<<count;
+
     //create dynamic memory
-    proc_list=new Process[count];
+    Process* proc_list[count];
+ 
     //reopen file to reset marker to start
     fin.close();
     ifstream _fin(filename);
 
     //read elements from file and instantiate objects on proc_list
-    for(int i=0; i<count;i++){
-	_fin>>_id>>_lines;
-	proc_list[i]=Process(_id, _lines);
+    for (int i = 0; i < count; i++)
+    {
+        _fin >> _id >> _lines;
+        proc_list[i] = new Process(_id, _lines);
     }
-
+ 
     //print non-static members
     Process::display();
-
-    //print array
-    print(proc_list, count);
     
-    //delete dynamic mem
-    // for(int i=0; i<count;i++){
-    // 	delete proc_list[i];
-    // }
-
-    cout<<endl;
+    cout << endl;
     return 0;
 }

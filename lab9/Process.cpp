@@ -3,60 +3,50 @@
 //default parametrized constructor
 Process::Process(const int _id, const int _lines)
 {
-
-    //update proc count
-    count++;
-    cout << "\nCount: " << count;
-
     //proceed to set/mutate attributes only if proc id is valid
-    cout << "\nConstructor called.";
     if (_id > 0)
-    {
-        id = _id;
-        cout << "\nID: " << id;
-        //update attributes related to proc lines if arg if valid
-        if (_lines > 0)
-        {
-            lines = _lines;
-            cout << "\nLines: " << lines;
-	    Process::totalLinesOfCode += _lines;
-	    cout<<"\ntotal lines: "<<totalLinesOfCode;
-            if (_lines >maxLinesOfCode)
-            {
-                maxLinesOfCode = _lines;
-            }
-            else if (_lines < minLinesOfCode || minLinesOfCode==1)
-            {
-                minLinesOfCode = _lines;
-            }
-            cout << "\nMax lines: " << maxLinesOfCode;
-            cout << "\nMin lines: " << minLinesOfCode;
-        }
+	{
+	    id = _id;
+	    //update attributes related to proc lines if arg if valid
+	    if (_lines > 0)
+		{
+		    lines = _lines;
+
+		    totalLinesOfCode += _lines;
+
+		    if (_lines > maxLinesOfCode)
+			{
+			    maxLinesOfCode = _lines;
+			}
+		    if (_lines < minLinesOfCode || count  == 0)
+			{
+			    minLinesOfCode = _lines;
+			}
+		}
+//update count of processes
+	    count++;
+//update the average
+	    avgLinesPerProcess = totalLinesOfCode / count;
     }
     else
     {
         id = 0, lines = 0;
     }
-
-    //update the average
-    avgLinesPerProcess =totalLinesOfCode / count;
 }
 
 //copy constructor
 Process::Process(const Process &_proc)
 {
-    cout << "\nCopy const called.";
-    //update count ot proc
-    //set id
+//set id
     id = _proc.id;
-    cout << "\nProc.id: " << _proc.id;
-    //set lines
+    
+//set lines
     lines = _proc.lines;
-    cout << "\nproc.lines:  " << _proc.lines;
-    //update static member totallinesofcode with the new total of proc lines
+
+//update static member totallinesofcode with the new total of proc lines
     totalLinesOfCode += lines;
-    cout << "\ntotal lines: " <<totalLinesOfCode;
-    //update static member avglinesperprocess with avg of total lines per proc
+
+//static member avglinesperprocess with avg of total lines per proc
     avgLinesPerProcess = totalLinesOfCode / count;
 }
 
@@ -126,10 +116,10 @@ int Process::get_avgLinesPerProcess()
 //others
 void Process::display()
 {
-    cout << "\n\tTotal Lines: " <<totalLinesOfCode;
-    cout << "\n\tMaximum Lines in a Process: " <<maxLinesOfCode;
-    cout << "\n\tMin lines in a process: " <<minLinesOfCode;
-    cout << "\n\tAverage Lines per process" <<avgLinesPerProcess;
+    cout << "\n\tTotal Lines: " << totalLinesOfCode;
+    cout << "\n\tMaximum Lines in a Process: " << maxLinesOfCode;
+    cout << "\n\tMin lines in a process: " << minLinesOfCode;
+    cout << "\n\tAverage Lines per process: " << avgLinesPerProcess;
 }
 
 void print(const Process *_procs, const int size)
