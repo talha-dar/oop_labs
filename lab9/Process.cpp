@@ -122,7 +122,7 @@ void Process::display()
     cout << "\n\tAverage Lines per process: " << avgLinesPerProcess;
 }
 
-void print(Process** _procs, const int size)
+void print(const Process* const* _procs, const int size)
 {
     cout<<endl;
     for (int i = 0; i < size; i++)
