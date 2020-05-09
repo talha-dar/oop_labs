@@ -3,7 +3,7 @@
 #include "Process.h"
 #include "Process.cpp"
 using namespace std;
- 
+
 int main()
 {
     char filename[] = {"processes.txt"};
@@ -26,8 +26,8 @@ int main()
 
     //create dynamic memory
     Process* proc_list[count];
- 
-    //reopen file to reset marker to start
+
+    //repopen file to reopen file to reset file marker
     fin.close();
     fin.open(filename);
 
@@ -50,7 +50,5 @@ int main()
     for(int i=0; i<count;i++){
 	delete proc_list[i];
     }
-    
-    cout << endl;
     return 0;
 }
