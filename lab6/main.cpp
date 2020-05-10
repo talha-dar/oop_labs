@@ -37,8 +37,9 @@ int main()
   }
 
   //make dynamic array on array ptr
+    cout<<"\nCreating dynamic array..";
   SalonEmployee *arr3[2];
-
+  cout<<"\nconstruction...";
   for (int i = 0; i < 2; i++) //copy instance i or arr1 to instance i of arr3
   { 
     arr3[i] = new SalonEmployee(arr1[i]);

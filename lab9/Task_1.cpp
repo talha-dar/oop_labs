@@ -1,4 +1,4 @@
-#include "Process.h"
+#include "Task_1.h"
 
 //default parametrized constructor
 Process::Process(const int _id, const int _lines)

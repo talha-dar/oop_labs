@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
-#include "Process.h"
-#include "Process.cpp"
+#include "Task_1.h"
+#include "Task_1.cpp"
 using namespace std;
 
 int main()
@@ -23,7 +23,7 @@ int main()
       fin.ignore('\n');
       count++;
     }
-
+	count++;
   //create dynamic memory
   Process* proc_list[count];
 
