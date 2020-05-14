@@ -23,7 +23,7 @@ int main()
       fin.ignore('\n');
       count++;
     }
-	count++;
+  count++;
   //create dynamic memory
   Process* proc_list[count];
 
