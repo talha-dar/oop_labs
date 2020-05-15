@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
-#include "Task_1.h"
-#include "Task_1.cpp"
+#include "Process.h"
+#include "Process.cpp"
 using namespace std;
 
 int main()
