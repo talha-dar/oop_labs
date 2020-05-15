@@ -3,7 +3,10 @@
 #include "Process.h"
 #include "Process.cpp"
 using namespace std;
-
+//hello there or is iterate
+void stuff(){
+  cout<<"\nsome stuff";
+}
 int main()
 {
   char filename[] = {"processes.txt"};
