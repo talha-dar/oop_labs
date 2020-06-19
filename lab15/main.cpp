@@ -17,7 +17,7 @@ int main(){
   displayCallingCard(ufone);
 
   cout<<"\n\nInstantiate IDCard obj and printing it..."<<endl;
-  IDCard id("Kenobi", 420420, "20.6.2020", 123455678, 45);
+  IDCard id("Kenobi", 420420, "20.6.2020", 125678, 45);
   displayIDCard(id);
 
   
