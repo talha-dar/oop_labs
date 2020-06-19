@@ -13,25 +13,25 @@ public:
   
   //setters
 
-  //for derived attributes
+  //for derived attributes access
   void setCardOwnerName(const char* name=nullptr);
-  void setCardExpiryDate(const char* date=nullptr);
   void setCardNumber(const int number=0);
+  void setCardExpiryDate(const char* date=nullptr);
 
   //for it's own attributes
   void setCardAmmount(const double _ammount=0);
   void setCardCompanyName(const char* _companyName=nullptr);
   void setCardPIN(const int _PIN=0);
-
+  
   //getters
 
-  //for derived attributes
+  //for derived attributes access
   char* getCardOwnerName()const;
-  char* getCardExpiryDate()const;
   int getCardNumber()const;
+  char* getCardExpiryDate()const;
 
   //for it's own attributes
-  double getCallingCardAmmount()const;
-  char* getCallingCardCompanyName()const;
-  int getCallingCardPIN()const;
+  double getCardAmmount()const;
+  char* getCardCompanyName()const;
+  int getCardPIN()const;
 };

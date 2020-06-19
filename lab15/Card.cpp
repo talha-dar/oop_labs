@@ -79,6 +79,6 @@ char* Card::getCardExpiryDate()const{
   return temp;
 }
 
-int Card::getCardNumebr()const{
+int Card::getCardNumber()const{
   return cardNumber;
 }

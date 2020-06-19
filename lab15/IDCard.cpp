@@ -12,5 +12,58 @@ IDCard::IDCard(const double _CNICNumber, const int _age):Card(){
 }
 
 IDCard::~IDCard(){
-  
+  CNICNumeber=0;
+  age=0;
+}
+
+//setters
+
+//for derived attributes access
+void IDCard::setCardOwnerName(const char* name){
+  Card::setCardOwnerName(name);
+}
+
+void IDCard::setCardNumber(const int number){
+  Card::setCardNumber(number);
+}
+
+void IDCard::setCardExpiryDate(const char* date){
+  Card::setCardExpiryDate(date);
+}
+
+//for it's own attributes
+void IDCard::setCNICNumber(const int _CNICNumber){
+  if(_CNICNumber>0){
+    CNICNumeber=_CNICNumber;
+  }
+}
+
+void IDCard::setOwnerAge(const int _age){
+  if(_age>0){
+    age=_age;
+  }
+}
+
+//getters
+
+//for derived attributes access
+char* IDCard::getCardOwnerName()const{
+  return Card::getCardOwnerName();
+}
+
+int IDCard::getCardNumber()const{
+  return Card::getCardNumber();
+}
+
+char* IDCard::getCardExpiryDate()const{
+  return Card::getCardExpiryDate();
+}
+
+//for it's own attributes
+double IDCard::getCNICNumber()const{
+  return CNICNumeber;
+}
+
+int IDCard::getOwnerAge()const{
+  return age;
 }

@@ -15,24 +15,24 @@ public:
 
   //setters
 
-  //for derived attributes
-  void setIDCardOwnerName(const char* name=nullptr);
-  void setIDCardNumber(const int number=0);
-  void setIDCardExpiryDate(const char* date=nullptr);
+  //for derived attributes access
+  void setCardOwnerName(const char* name=nullptr);
+  void setCardNumber(const int number=0);
+  void setCardExpiryDate(const char* date=nullptr);
 
   //for it's own attributes
-  void setIDCardCNICNumber(const int _CNICNumber=0);
-  void setIDCardOwnerAge(const int _age=0);
+  void setCNICNumber(const int _CNICNumber=0);
+  void setOwnerAge(const int _age=0);
 
   //getters
 
   //for derived attributes
-  char* getIDCardOwnerName()const;
-  int getIDCardNumber()const;
-  char* getIDCardExpiryDate()const;
-
+  char* getCardOwnerName()const;
+  int getCardNumber()const;
+  char* getCardExpiryDate()const;
+  
   //for it's own attributes
-  double getIDCardCNICNumber()const;
-  int getIDCardOwnerAge()const;
+  double getCNICNumber()const;
+  int getOwnerAge()const;
   
 };

@@ -26,6 +26,6 @@ public:
   
   //getters
   char* getCardOwnerName()const;
-  int getCardNumebr()const;
+  int getCardNumber()const;
   char* getCardExpiryDate()const;
 };

@@ -31,33 +31,33 @@ CallingCard::~CallingCard(){
 //setters
 
 //for derived attributes
-void CallingCard::setCallingCardOwnerName(const char* name){
-  setCardOwnerName(name);
+void CallingCard::setCardOwnerName(const char* name){
+  Card::setCardOwnerName(name);
 }
 
-void CallingCard::setCallingCardNumber(const int number){
-  setCardNumber(number);
+void CallingCard::setCardNumber(const int number){
+  Card::setCardNumber(number);
 }
 
-void CallingCard::setCallingCardExpiryDate(const char* date){
-  setCardExpiryDate(date);
+void CallingCard::setCardExpiryDate(const char* date){
+  Card::setCardExpiryDate(date);
 }
 
 //for it's own attributes
-void CallingCard::setCallingCardAmmount(const double _ammount){
+void CallingCard::setCardAmmount(const double _ammount){
   if(_ammount>0){
     ammount=_ammount;
   }
 }
 
-void CallingCard::setCallingCardCompanyName(const char* _companyName){
+void CallingCard::setCardCompanyName(const char* _companyName){
   if(_companyName){
     companyName=new char[strlen(_companyName)+1]{'\0'};
     strcpy(companyName, _companyName);
   }
 }
 
-void CallingCard::setCallingCardPIN(const int _PIN){
+void CallingCard::setCardPIN(const int _PIN){
   if(_PIN>0){
     PIN=_PIN;
   }
@@ -66,24 +66,24 @@ void CallingCard::setCallingCardPIN(const int _PIN){
 //getters
 
 //for derived attributes
-char* CallingCard::getCallingCardOwnerName()const{
-  return getCardOwnerName();
+char* CallingCard::getCardOwnerName()const{
+  return Card::getCardOwnerName();
 }
 
-char* CallingCard::getCallingCardExpiryDate()const{
-  return getCardExpiryDate();
+char* CallingCard::getCardExpiryDate()const{
+  return Card::getCardExpiryDate();
 }
 
-int CallingCard::getCallingCardNumber()const{
-  return getCardNumebr();
+int CallingCard::getCardNumber()const{
+  return Card::getCardNumber();
 }
 
 //for it's own attributes
-double CallingCard::getCallingCardAmmount()const{
+double CallingCard::getCardAmmount()const{
   return ammount;
 }
 
-char* CallingCard::getCallingCardCompanyName()const{
+char* CallingCard::getCardCompanyName()const{
   char* temp=nullptr;
   if(companyName){
     temp=new char[strlen(companyName)+1]{'\0'};
@@ -92,6 +92,6 @@ char* CallingCard::getCallingCardCompanyName()const{
   return temp;
 }
 
-int CallingCard::getCallingCardPIN()const{
+int CallingCard::getCardPIN()const{
   return PIN;
 }
