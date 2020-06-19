@@ -1,5 +1,6 @@
 #pragma once
 #include<cstring>
+#include<iostream>
 using namespace std;
 
 class Card{
@@ -29,3 +30,5 @@ public:
   int getCardNumber()const;
   char* getCardExpiryDate()const;
 };
+
+void displayCard(const Card&);

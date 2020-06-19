@@ -1,6 +1,6 @@
 #include"IDCard.h"
 
-IDCard::IDCard(const double _CNICNumber, const int _age):Card(){
+IDCard::IDCard(const char* name, const int number, const char* date,const double _CNICNumber, const int _age):Card(name, number, date){
   if(_CNICNumber>0 && _age){
     CNICNumeber=_CNICNumber;
     age=_age;
@@ -66,4 +66,12 @@ double IDCard::getCNICNumber()const{
 
 int IDCard::getOwnerAge()const{
   return age;
+}
+
+void displayIDCard(const IDCard& obj){
+  cout<<"\nOwner Name: "<<obj.getCardOwnerName();
+  cout<<"\nCNIC number: "<<obj.getCNICNumber();
+  cout<<"\nAge: "<<obj.getOwnerAge();
+  cout<<"\nCard Number: "<<obj.getCardNumber();
+  cout<<"\nCard Expiry Date: "<<obj.getCardExpiryDate();
 }

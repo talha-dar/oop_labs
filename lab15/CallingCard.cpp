@@ -1,6 +1,6 @@
 #include"CallingCard.h"
 
-CallingCard::CallingCard(const char* _companyName, const double _ammount, const int _PIN):Card(){
+CallingCard::CallingCard(const char* name, const int number, const char* date, const char* _companyName, const double _ammount, const int _PIN):Card(name, number, date){
   if(_companyName && _ammount>0 && _PIN>0){
     //set companyname
     companyName=new char[strlen(_companyName)+1]{'\0'};
@@ -94,4 +94,13 @@ char* CallingCard::getCardCompanyName()const{
 
 int CallingCard::getCardPIN()const{
   return PIN;
+}
+
+void displayCallingCard(const CallingCard& obj){
+  cout<<"\nOwner Name: "<<obj.getCardOwnerName();
+  cout<<"\nCard Number: "<<obj.getCardNumber();
+  cout<<"\nCompany: "<<obj.getCardCompanyName();
+  cout<<"\nAmmount: "<<obj.getCardAmmount();
+  cout<<"\nPIN: "<<obj.getCardPIN();
+  cout<<"\nExpiry: "<<obj.getCardExpiryDate();
 }

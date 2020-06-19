@@ -82,3 +82,9 @@ char* Card::getCardExpiryDate()const{
 int Card::getCardNumber()const{
   return cardNumber;
 }
+
+void displayCard(const Card& obj){
+  cout<<"\nOwner Name: "<<obj.getCardOwnerName();
+  cout<<"\nCard Number: "<<obj.getCardNumber();
+  cout<<"\nExpiry Date: "<<obj.getCardExpiryDate();
+}

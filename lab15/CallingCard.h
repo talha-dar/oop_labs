@@ -8,7 +8,7 @@ private:
   char* companyName;
   int PIN;
 public:
-  CallingCard(const char* _companyName=nullptr, const double _ammount=0, const int _PIN=0);
+  CallingCard(const char* name=nullptr, const int number=0, const char* date=nullptr, const char* _companyName=nullptr, const double _ammount=0, const int _PIN=0);
   ~CallingCard();
   
   //setters
@@ -35,3 +35,5 @@ public:
   char* getCardCompanyName()const;
   int getCardPIN()const;
 };
+
+void displayCallingCard(const CallingCard&);

@@ -9,7 +9,7 @@ private:
   int age;
 public:
   //default parametrized constructor
-  IDCard(const double _CNICNumber=0, const int _age=0);
+  IDCard(const char* name=nullptr, const int number=0, const char* date=nullptr, const double _CNICNumber=0, const int _age=0);
   //destructor
   ~IDCard();
 
@@ -36,3 +36,5 @@ public:
   int getOwnerAge()const;
   
 };
+
+void displayIDCard(const IDCard&);
