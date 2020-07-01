@@ -3,7 +3,6 @@
 #include<cstring>
 #include<fstream>
 #include"BankAccount.h"
-
 class BankDatabase{
  private:
   BankAccount* accounts;

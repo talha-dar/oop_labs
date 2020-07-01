@@ -42,6 +42,7 @@ const BankAccount& BankDatabase::operator[](const int index)const{
     return accounts[0];
   }
 }
+
 //getters
 int BankDatabase::get_size()const{
   return size;
