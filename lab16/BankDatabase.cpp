@@ -27,9 +27,6 @@ BankAccount& BankDatabase::operator[](const int index){
   if(accounts){
     return accounts[index];
   }
-  else{
-    return accounts[0];
-  }
 }
 
 // constant subscript operator
@@ -37,9 +34,6 @@ BankAccount& BankDatabase::operator[](const int index){
 const BankAccount& BankDatabase::operator[](const int index)const{
   if(accounts){
     return accounts[index];
-  }
-  else{
-    return accounts[0];
   }
 }
 
